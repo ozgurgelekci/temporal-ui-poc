@@ -143,9 +143,3 @@ Koşu sonucu:
 - Validate → Parse → Enrich (processing) → Hash → ApplySignature → VerifySignature → PersistSigned (signing).
 - Starter `Status: Completed` döndü, signature üretildi.
 - UI'da parent + child workflow, event history ve payload'lar doğrulandı.
-
-Sonraki adım fikirleri:
-
-- `SIGNATURE_MESSAGE` tablosunu okuyup her satır için `StartWorkflowAsync` çağıran bir `BackgroundService` yazılabilir. `WorkflowId = "sig-{msg.Id}"` duplicate dispatch'i engeller.
-- Workflow sonundaki activity `SIGNATURE_MESSAGE` status kolonunu günceller, mevcut akışla paralel çalışır.
-- Bir activity'ye exception koyarak retry davranışını UI üzerinden canlı izlemek mümkün.
